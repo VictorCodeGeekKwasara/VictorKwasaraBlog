@@ -2,7 +2,7 @@
 contentKey: blog
 title: Coffee stuff
 blogImage: ../../img/smallb.jpg
-snipImage: ../../img/smallt.jpeg
+snipImage: ../../static/img/smallt.jpeg
 date: 2022-01-07T07:06:37.115Z
 ---
 <!--StartFragment-->
