@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql, Link} from 'gatsby' ;
 import Layout from '../components/Layout';
-
+import { StaticImage } from "gatsby-plugin-image"
 
 
 export default function Blogs({data, pageContext}) {
@@ -21,8 +21,7 @@ export default function Blogs({data, pageContext}) {
           data.allMarkdownRemark.edges.map(blog=>(
                   <li key={blog.node.id}> 
                   <Link to={blog.node.fields.slug}>
-                     
-                     <h1>{blog.node.frontmatter.title}</h1>
+                      <h1>{blog.node.frontmatter.title}</h1>
                       <h3>{blog.node.frontmatter.date}</h3>
                       <p>{blog.node.excerpt}</p>
                    </Link> 
@@ -51,12 +50,6 @@ export default function Blogs({data, pageContext}) {
 export const query = graphql`
   query BlogListQuery($skip: Int!, $limit: Int!){
 
-     allImageSharp {
-    nodes {
-      gatsbyImageData(placeholder: TRACED_SVG)
-    }
-  }
-
     allMarkdownRemark(
       sort:{fields:[frontmatter___date], order: DESC}
       filter: {frontmatter: {contentKey: {eq: "blog"}}}
@@ -69,7 +62,7 @@ export const query = graphql`
           frontmatter{
             title
             date(formatString: "MMMM D, YYYY")
-            snipImage
+            
           }
           fields{
             slug
