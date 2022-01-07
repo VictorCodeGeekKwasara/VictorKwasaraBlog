@@ -7,7 +7,7 @@ export default function Nav() {
       desktop nav
       <Link to="/about">about</Link>
       <Link to="/portfolio">portfolio</Link>
-      <Link to="/blogs">blogs</Link>
+      <Link to="/blog">blogs</Link>
       <Link to="/contact">contact</Link>
       <Link to="/login">login</Link>
       <Link to="/joinus">joinus</Link>

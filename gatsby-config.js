@@ -3,18 +3,17 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "victorkwasara",
   },
-  plugins: [
-    "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-image",
+  plugins: [ 
+    
     "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    
     `gatsby-transformer-remark`,
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images/`,
       },
       __key: "images",
     },
@@ -22,7 +21,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `${__dirname}/src/pages/`,
       },
       __key: "pages",
     },
@@ -30,9 +29,34 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
-        path: "./src/blog/",
+        path: `${__dirname}/src/blog/`,
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/static/img`,
+      },
+      
+    },
+    
+    "gatsby-transformer-sharp",
+     "gatsby-plugin-sharp",
+      "gatsby-plugin-image",
+
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins:[
+          'gatsby-remark-relative-images',
+          'gatsby-remark-images'
+        ]
+      }
+    },
+    "gatsby-plugin-netlify-cms",
+   
+   
   ],
 };
