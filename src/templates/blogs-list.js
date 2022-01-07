@@ -3,8 +3,10 @@ import {graphql, Link} from 'gatsby' ;
 import Layout from '../components/Layout';
 
 
+
 export default function Blogs({data, pageContext}) {
 
+   console.log(data)
   const previousPage = pageContext.currentPage === 2 ? '/blog': `/blog/${pageContext.currentPage-1}`;
   const nextPage = `/blog/${pageContext.currentPage + 1}`;
   return (
@@ -19,6 +21,7 @@ export default function Blogs({data, pageContext}) {
           data.allMarkdownRemark.edges.map(blog=>(
                   <li key={blog.node.id}> 
                   <Link to={blog.node.fields.slug}>
+                     
                      <h1>{blog.node.frontmatter.title}</h1>
                       <h3>{blog.node.frontmatter.date}</h3>
                       <p>{blog.node.excerpt}</p>
@@ -48,6 +51,12 @@ export default function Blogs({data, pageContext}) {
 export const query = graphql`
   query BlogListQuery($skip: Int!, $limit: Int!){
 
+     allImageSharp {
+    nodes {
+      gatsbyImageData(placeholder: TRACED_SVG)
+    }
+  }
+
     allMarkdownRemark(
       sort:{fields:[frontmatter___date], order: DESC}
       filter: {frontmatter: {contentKey: {eq: "blog"}}}
@@ -60,6 +69,7 @@ export const query = graphql`
           frontmatter{
             title
             date(formatString: "MMMM D, YYYY")
+            snipImage
           }
           fields{
             slug
