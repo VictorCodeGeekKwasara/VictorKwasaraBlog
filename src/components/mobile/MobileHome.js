@@ -1,14 +1,23 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import bgsmall from '../../images/MobileHomePage.svg'
 import bgtall from '../../images/tallscreen.svg'
 import {Typography} from '@mui/material';
 import{ Button} from "gatsby-theme-material-ui"
 
+export default function MobileHome() {  
+	const [tall,setTall] = useState(true);
 
-const d1angle = (Math.atan((window.innerHeight)/(2*window.innerWidth)))*(180/Math.PI)-10;
-const d2angle = d1angle - 75
+useEffect(() => {
+		const handleview = () => {
+		  window.innerHeight > 700 ? setTall(true): setTall(false)
+		};
 
-const image = window.innerHeight > 700 ? bgtall: bgsmall ;
+		handleview();
+		window.addEventListener('resize', handleview);
+	}, []);
+
+
+  let image = tall ? bgtall: bgsmall 
 
 const styles = {
 
@@ -61,8 +70,6 @@ const styles = {
   }
 }
 
-
-export default function MobileHome() {   
   return (
   
   <div style={{height:"100vh"}}>
