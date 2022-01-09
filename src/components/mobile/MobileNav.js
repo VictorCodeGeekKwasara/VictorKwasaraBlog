@@ -18,7 +18,6 @@ const styles={
     justifyContent:'flex-end',
     
   },
-
   appdv:{
     position:'absolute',
     top:'0.4vh',
