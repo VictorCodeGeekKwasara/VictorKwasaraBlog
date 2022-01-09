@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 export default function MobileNav() {
   return (
-    <div>
+    <div >
       mobile nav
       <Link to="/about">about</Link>
       <Link to="/portfolio">portfolio</Link>

@@ -5,12 +5,13 @@ import MobileFooter from './mobile/MobileFooter'
 import MobileNav from './mobile/MobileNav'
 import { useWidth } from '../hooks/useWidth'
 
+
 export default function Layout({children}) {
 
     let mobile = useWidth(true)
 
   return (
-    <>
+    <div>
 
     {mobile ? <MobileNav/>:<Nav/>}
     
@@ -18,6 +19,6 @@ export default function Layout({children}) {
     
     {mobile? <MobileFooter/>:<Footer/>}
       
-    </>
+    </div>
   )
 }
