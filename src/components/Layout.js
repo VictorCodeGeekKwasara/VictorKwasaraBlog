@@ -6,12 +6,22 @@ import MobileNav from './mobile/MobileNav'
 import { useWidth } from '../hooks/useWidth'
 
 
+const styles= {
+
+  wrapper:{
+
+    // display:'flex',
+    // flexDirection:'column',
+    // minHeight:'100vh',
+  }
+}
+
 export default function Layout({children}) {
 
     let mobile = useWidth(true)
 
   return (
-    <div>
+    <>
 
     {mobile ? <MobileNav/>:<Nav/>}
     
@@ -19,6 +29,6 @@ export default function Layout({children}) {
     
     {mobile? <MobileFooter/>:<Footer/>}
       
-    </div>
+    </>
   )
 }

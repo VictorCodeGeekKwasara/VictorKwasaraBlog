@@ -64,11 +64,12 @@ const styles = {
 
 export default function MobileHome() {   
   return (
-
-    <div style={styles.wrapper}> 
+  
+  <div style={{height:"100vh"}}>
+  <div style={styles.wrapper}> 
 
     <div style={styles.wrapper.txt}>
-      <Typography variant='h3'>Welcome to victor’s Blog and Potfolio site</Typography>
+      <Typography variant='h3'>Welcome to Victor’s Blog and Potfolio site</Typography>
 
       <Button to={`/blog`} variant='contained' sx={styles.wrapper.txt.btn1}> Blogs</Button>
       <Button to={`/portfolio`} variant='contained' sx={styles.wrapper.txt.btn2}>Portfolio</Button>
@@ -76,6 +77,10 @@ export default function MobileHome() {
    
 
     </div>
+  
+ </div>
+
+    
  
   )
 }
