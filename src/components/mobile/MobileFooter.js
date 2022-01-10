@@ -1,4 +1,3 @@
-import { CopyAll } from '@mui/icons-material'
 import React from 'react'
 
 
@@ -10,8 +9,8 @@ const styles={
    height:'10vh',
    width:'100%',
    marginTop:'auto',
-   textAlign:'center'
-  
+   textAlign:'center',
+   zIndex:100
   
    
  }
