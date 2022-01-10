@@ -41,7 +41,7 @@ const styles={
 
     lnks:{
       
-      height: '14vh',
+      height: '15vh',
       width: '100vw',
       fontSize:'5vh',
       textDecoration:'none',
@@ -91,7 +91,6 @@ export default function MobileNav() {
       <Link style={styles.linkdv.lnks} to="/portfolio">Portfolio</Link>
       <Link style={styles.linkdv.lnks}  to="/blog">Blogs</Link>  
       <Link style={styles.linkdv.lnks}  to="/about">About</Link>   
-      <Link style={styles.linkdv.lnks}  to="/contact">Contact</Link>
       <Link style={styles.linkdv.lnks} to="/login">Login</Link>
       <Link style={styles.linkdv.lnks} to="/joinus">Joinus</Link>    
     </div>    

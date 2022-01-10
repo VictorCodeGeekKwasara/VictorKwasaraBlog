@@ -3,12 +3,11 @@ import { Link } from 'gatsby'
 
 export default function Nav() {
   return (
-    <div>
-      desktop nav
+    <div>    
+      <Link to="/">Home</Link>
       <Link to="/about">about</Link>
       <Link to="/portfolio">portfolio</Link>
       <Link to="/blog">blogs</Link>
-      <Link to="/contact">contact</Link>
       <Link to="/login">login</Link>
       <Link to="/joinus">joinus</Link>
     </div>

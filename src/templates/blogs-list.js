@@ -1,37 +1,90 @@
 import React from 'react'
-import {graphql, Link} from 'gatsby' ;
+import {graphql} from 'gatsby' ;
 import Layout from '../components/Layout';
 import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {
+  BottomNavigationAction,
+  Button,
+  CardActionArea,
+  Fab,
+  IconButton,
+  Link,
+} from "gatsby-theme-material-ui";
+import {Typography} from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
+
+const styles = {
+
+  bg:{
+     position:'absolute',
+     top:'0px',
+     left:'0px',
+     width:'100vw',
+     height:'200vh', //bug needs fixing
+     backgroundColor:'#1F0318',
+     mixBlendMode:'multiply',
+     zIndex:'-1'
+  },
+
+  wrapper:{
+
+    marginTop:"10vh",
+    height:'190vh',
+    overflowY:'scroll',
+    
+    card:{
+
+    width:'80vw',
+
+    actionArea:{
+      width:'100%',
+      
+
+    
+    }
+  }
+  
+  }
+
+
+
+
+}
 
 export default function Blogs({data, pageContext}) {
   
-   console.log(data)
   const previousPage = pageContext.currentPage === 2 ? '/blog': `/blog/${pageContext.currentPage-1}`;
   const nextPage = `/blog/${pageContext.currentPage + 1}`;
+  const blogs = data.allMarkdownRemark.edges;
+
+
   return (
     <Layout>
-      <div >
-        <h1>Blog</h1>
-      </div>
-
+      <div style={styles.bg}></div>
+      <div  style={styles.wrapper}>       
       <ul>
-
         {
-          data.allMarkdownRemark.edges.map(blog=>{
-            
+          blogs.map(blog=>{            
             const image = getImage(blog.node.frontmatter.snipImage)
-            return   <li key={blog.node.id}> 
-                  <Link to={blog.node.fields.slug}>
-                     <GatsbyImage image={image} alt="stuff" />
-                      <h1>{blog.node.frontmatter.title}</h1>
-                      <h3>{blog.node.frontmatter.date}</h3>
-                      <p>{blog.node.excerpt}</p>
-                   </Link> 
-                   </li>    }
-            
-           
+            return     <Card sx={styles.wrapper.card} key={blog.node.id}>
+                          <CardActionArea sx={styles.wrapper.card.actionArea} to={blog.node.fields.slug}>
+                          <GatsbyImage sx={styles.wrapper.card.actionArea.img} image={image} alt="blog image" />
+                          <CardContent>
+                            <Typography gutterBottom variant="h4" component="div">
+                            {blog.node.frontmatter.title}
+                            </Typography>
+                            <Typography gutterBottom variant="h5" component="div">
+                            {blog.node.frontmatter.date}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              {blog.node.excerpt}
+                            </Typography>
+                             </CardContent>
+                            </CardActionArea>
+                        </Card>  }
 
           )
         }
@@ -48,6 +101,8 @@ export default function Blogs({data, pageContext}) {
           </Link>
         )}
       </div>
+      </div>
+     
       
     </Layout>
   )

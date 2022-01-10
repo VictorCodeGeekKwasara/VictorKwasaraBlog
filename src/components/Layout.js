@@ -10,6 +10,7 @@ const styles= {
 
   wrapper:{
 
+    
     // display:'flex',
     // flexDirection:'column',
     // minHeight:'100vh',
