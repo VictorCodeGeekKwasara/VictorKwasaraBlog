@@ -7,11 +7,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {IconButton, Link} from "gatsby-theme-material-ui"
 import { Divider } from '@mui/material';
-import balance from '../images/balance.svg'
+import balance from '../images/balance.svg';
+import { useWidth } from '../hooks/useWidth';
+import AboutLarge from '../components/desktop/AboutLarge';
 
 
 
-const styles = {
+const styles ={
  
 
   container:{
@@ -19,7 +21,8 @@ const styles = {
     width:'100%',
     height:'200vh',
     overflow:'hidden',
-
+    
+   
 
     bg:{
      position:'absolute',
@@ -42,6 +45,7 @@ const styles = {
     right:'0px',
     height:'80vh',
     width:'55vw',
+    
     // backgroundColor:'red'
     social:{
       display:'flex',
@@ -92,14 +96,20 @@ const styles = {
 
   }
   },
-
  
 }
 
 export default function About() {
+
+  // custome hook used to toggle the screen design based on view width improvision
+  // should use beter styling solutions
+let mobile = useWidth(false) ; 
+
+
+
   return (
     <Layout>       
-      <div style={styles.container}>
+      { mobile?(<div style={styles.container}>
       <div style={styles.container.bg}></div>
       <div style={styles.container.img}><StaticImage placeholder="tracedSVG" src="../images/victor.png" alt="victor pic" />
       <div style={styles.container.img.social}>
@@ -152,7 +162,10 @@ export default function About() {
 
         <div style={styles.container.balance}></div>
      
-      </div>
+      </div>): (
+        
+        <AboutLarge/>        )  }
+      
      
     </Layout>
   )

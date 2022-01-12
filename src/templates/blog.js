@@ -1,16 +1,23 @@
 import React from 'react'
 import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
+import { useWidth } from '../hooks/useWidth';
+import {Typography} from '@mui/material';
+import { style } from '@mui/system';
 
-const styles = {
+export default function Blog({data}) {
+
+  let mobile = useWidth(true) ; 
+  
+  const styles = {
 
   bg:{
      position:'absolute',
      top:'0px',
      left:'0px',
-     width:'100vw',
+     width:'98.5vw',
      height:'200vh', //bug needs fixing
-     backgroundColor:'#1F0318',
+     backgroundColor: mobile? '#1F0318' : '#ffff' ,
      mixBlendMode:'multiply',
      zIndex:'-1'
   },
@@ -18,40 +25,41 @@ const styles = {
 
     margin:"10vh auto 0 auto",   
     height:'190vh',
-    width:'80vw',
+    width:mobile? '80vw':'900px',
     overflowY:'scroll',
     textAlign:'center',
    display:'flex',
    flexDirection:'column',
    alignitems:'center',
-   color:'#fff'
+   color: mobile? '#fff':'#505050',
+   overflowY:'hidden',
     
     // card:{
 
     // width:'80vw',
 
     // actionArea:{
-    //   width:'100%',
-      
-
-    
+    //   width:'100%',   
     // }
   // }
   
+  txt:{
+
+    fontFamily:'sans-serif',
+    fontSize:'24px',
+    // letterSpacing:'4px'
+  }
   }
 
 
 }
-
-export default function Blog({data}) {
   return (
-    <Layout>
-      
+    <Layout>      
       <div style={styles.bg}></div>
       <div style={styles.wrapper}>
         <div>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{__html:data.markdownRemark.html}}/>
+        <Typography variant={mobile?'h6':'h2'}>{data.markdownRemark.frontmatter.title}</Typography>
+        <div  style={styles.wrapper.txt} dangerouslySetInnerHTML={{__html:data.markdownRemark.html}}/>
         </div>                
       </div>
     </Layout>

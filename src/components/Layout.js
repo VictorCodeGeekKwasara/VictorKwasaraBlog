@@ -14,6 +14,7 @@ const styles= {
     // display:'flex',
     // flexDirection:'column',
     // minHeight:'100vh',
+    // overflowX:'hidden',
   }
 }
 

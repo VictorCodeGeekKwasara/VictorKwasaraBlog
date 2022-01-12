@@ -1,30 +1,33 @@
 import React from 'react'
 import {graphql} from 'gatsby' ;
 import Layout from '../components/Layout';
-import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  BottomNavigationAction,
-  Button,
-  CardActionArea,
-  Fab,
-  IconButton,
-  Link,
-} from "gatsby-theme-material-ui";
+import {CardActionArea,Link} from "gatsby-theme-material-ui";
 import {Typography} from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useWidth } from '../hooks/useWidth';
+import { Box } from '@mui/system';
 
 
+
+export default function Blogs({data, pageContext}) {
+  
+  const previousPage = pageContext.currentPage === 2 ? '/blog': `/blog/${pageContext.currentPage-1}`;
+  const nextPage = `/blog/${pageContext.currentPage + 1}`;
+  const blogs = data.allMarkdownRemark.edges;
+
+  let mobile = useWidth(true) ; //hook used to toggle screen components based on width
+  
 const styles = {
 
   bg:{
      position:'absolute',
      top:'0px',
      left:'0px',
-     width:'100vw',
+     width:'98.5vw',
      height:'200vh', //bug needs fixing
-     backgroundColor:'#1F0318',
+     backgroundColor: mobile? '#1F0318' : '#D3D3D3' ,
      mixBlendMode:'multiply',
      zIndex:'-1'
   },
@@ -33,45 +36,40 @@ const styles = {
 
     marginTop:"10vh",
     height:'190vh',
-    overflowY:'scroll',
-    
+    overflow:'hidden',
+    width:'100%',
+
+    box:{
+
+      marginBottom:'5vh',
+      
+
     card:{
 
     width:'80vw',
-
-    actionArea:{
-      width:'100%',
-      
-
+    marginBottom:'5vh',
     
+    actionArea:{
+      width:'100%', 
     }
   }
-  
+    }
+    
+
   }
 
-
-
-
 }
-
-export default function Blogs({data, pageContext}) {
-  
-  const previousPage = pageContext.currentPage === 2 ? '/blog': `/blog/${pageContext.currentPage-1}`;
-  const nextPage = `/blog/${pageContext.currentPage + 1}`;
-  const blogs = data.allMarkdownRemark.edges;
-
-
   return (
     <Layout>
       <div style={styles.bg}></div>
       <div  style={styles.wrapper}>       
-      <ul>
+      <ul  sx={styles.wrapper.box}>
         {
           blogs.map(blog=>{            
             const image = getImage(blog.node.frontmatter.snipImage)
-            return     <Card sx={styles.wrapper.card} key={blog.node.id}>
-                          <CardActionArea sx={styles.wrapper.card.actionArea} to={blog.node.fields.slug}>
-                          <GatsbyImage sx={styles.wrapper.card.actionArea.img} image={image} alt="blog image" />
+            return     <Card sx={styles.wrapper.box.card} key={blog.node.id}>
+                          <CardActionArea sx={styles.wrapper.box.card.actionArea} to={blog.node.fields.slug}>
+                          <GatsbyImage sx={styles.wrapper.box.card.actionArea.img} image={image} alt="blog image" />
                           <CardContent>
                             <Typography gutterBottom variant="h4" component="div">
                             {blog.node.frontmatter.title}
@@ -101,9 +99,7 @@ export default function Blogs({data, pageContext}) {
           </Link>
         )}
       </div>
-      </div>
-     
-      
+      </div>      
     </Layout>
   )
 }

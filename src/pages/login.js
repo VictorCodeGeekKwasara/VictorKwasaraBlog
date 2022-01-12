@@ -3,7 +3,19 @@ import Layout from '../components/Layout';
 import axios  from 'axios'
 import { Button } from 'gatsby-theme-material-ui';
 import { Typography } from '@mui/material';
+import { useWidth } from '../hooks/useWidth';
 
+
+
+export default function Login() {
+ 	
+	const [passError, setPassError] = useState('');
+	const [emailError, setEmailError] = useState('');
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+  let mobile = useWidth(true) ; 
 const styles = {
 
   err:{
@@ -14,7 +26,7 @@ const styles = {
      position:'absolute',
      top:'0px',
      left:'0px',
-     width:'100vw',
+     width:mobile? '100vw': '98.5vw',
      height:'100vh',
      backgroundImage:`linear-gradient(to right, #1F0318,#58F8FA,#1F0318)`,
      zIndex:'-1'
@@ -57,16 +69,6 @@ const styles = {
   }
  
 }
-
-export default function Login() {
- 	
-	const [passError, setPassError] = useState('');
-	const [emailError, setEmailError] = useState('');
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-
-
   const handlesubmit = (e) => {
 		e.preventDefault();
 		setEmailError('');
