@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import Layout from '../Layout'
 import { Typography } from '@mui/material'
 import { StaticImage } from "gatsby-plugin-image"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -18,7 +17,7 @@ const styles ={
   container:{
 
   
-    marginTop:"-10vh",  
+    marginTop:"-2vh",  
    
 
     bg:{
@@ -88,7 +87,7 @@ export default function AboutLarge() {
         </Grid>     
 
       <Grid item  md={4} style={styles.container.img}>
-      <StaticImage placeholder="tracedSVG" src="../images/victor.png" alt="victor pic"  
+      <StaticImage placeholder="tracedSVG" src="../../images/victor.png" alt="victor pic"  
       />
       <div style={styles.container.img.social}>
            <IconButton

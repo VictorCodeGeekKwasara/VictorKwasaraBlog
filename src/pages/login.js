@@ -11,7 +11,6 @@ export default function Login() {
  	
 	const [passError, setPassError] = useState('');
 	const [emailError, setEmailError] = useState('');
-	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -74,7 +73,7 @@ const styles = {
 		setEmailError('');
     setPassError('');
 		axios
-			.post('https://backendblogvictork.herokuapp.com/login', { name, email, password })
+			.post('https://backendblogvictork.herokuapp.com/login', { email, password })
 			.then((res) => {
 				console.log(res.data);
 			window.location.assign("/blog")
@@ -118,7 +117,7 @@ const styles = {
 				onChange={(e) => setEmail(e.target.value)}
         style={styles.formwrapper.frm.inpt}
          />
-         {emailError!='' && <div style={styles.err}>{emailError}</div>}
+         {emailError!=='' && <div style={styles.err}>{emailError}</div>}
         <input
         type="password"
         placeholder='password'
@@ -128,7 +127,7 @@ const styles = {
 				onChange={(e) => setPassword(e.target.value)}
         style={styles.formwrapper.frm.inpt}
         />
-        {passError!='' && <div style={styles.err}>{passError}</div>}
+        {passError!=='' && <div style={styles.err}>{passError}</div>}
 
         <Button type="submit" variant='contained' sx={styles.formwrapper.frm.btn}>Submit</Button>
       </form>

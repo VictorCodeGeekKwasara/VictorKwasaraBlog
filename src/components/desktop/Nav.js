@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar } from '@mui/material'
-import {IconButton, Link} from "gatsby-theme-material-ui"
+import {Link} from "gatsby-theme-material-ui"
 const styles = {
 
 appbar:{
@@ -33,11 +33,11 @@ export default function Nav() {
   return (
     <AppBar  sxposition="static" sx={styles.appbar}>    
       <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/">Home</Link>
-      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/about">about</Link>
-      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/portfolio">portfolio</Link>
-      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/blog">blogs</Link>
-      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/login">login</Link>
-      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/joinus">joinus</Link>
+      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/about">About</Link>
+      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/portfolio">Portfolio</Link>
+      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/blog">Blogs</Link>
+      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/login">Login</Link>
+      <Link sx={styles.appbar.lnk} underline="hover" variant='h4' to="/joinus">Joinus</Link>
     </AppBar>
   )
 }

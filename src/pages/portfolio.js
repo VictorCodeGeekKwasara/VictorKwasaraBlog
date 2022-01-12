@@ -1,18 +1,11 @@
 import React from 'react'
-import {graphql} from 'gatsby' ;
 import Layout from '../components/Layout';
 import { StaticImage } from "gatsby-plugin-image"
-import { Box } from '@mui/system';
-import {CardActionArea,Link} from "gatsby-theme-material-ui";
+import {CardActionArea} from "gatsby-theme-material-ui";
 import {Typography} from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import img1 from '../images/smallA.jpeg'
-import img2 from '../images/handsome.jpg'
 import { useWidth } from '../hooks/useWidth';
-
-
-
 
 export default function Portfolio({data, pageContext}) {
   
@@ -23,7 +16,7 @@ const styles = {
      position:'absolute',
      top:'0px',
      left:'0px',
-     width: mobile? '98.5vw':'100vw',
+     width: mobile?'100vw':'98.5vw',
      height:'200vh', //bug needs fixing
      backgroundColor: mobile? '#1F0318' : '#D3D3D3' ,
      mixBlendMode:'multiply',
@@ -55,40 +48,47 @@ const styles = {
   }
 
 }
-  const sites = [{ src:img1, link:'https://professorcodegeekblogsitesample1.netlify.app',name:'Blog sample', description:'A blog and portfolio site using react, mui'},{ src:img2,link:'https://nortongymv1.netlify.app',name:'Gym landing Page', description:'A responsive Landing Page using Gatsby'}]
+  
   return (
     <Layout>
       <div style={styles.bg}></div>
       <div  style={styles.wrapper}>       
-      <ul  sx={styles.wrapper.box}>
-        {
-          sites.map((site,i)=>{            
-           
-            return     <Card sx={styles.wrapper.box.card} key={i+Date.now()}>
-                          <CardActionArea sx={styles.wrapper.box.card.actionArea} to={site.link}>
-                          {/* <GatsbyImage sx={styles.wrapper.card.actionArea.img} image={image} alt="blog image" /> */}
-
-                           {/* <StaticImage sx={styles.wrapper.card.actionArea.img} src={site.src}   alt="site display image" placeholder="blurred"      layout="fixed"    width={200} height={200}
-                           /> */}
-                          <CardContent>
-                            <Typography gutterBottom variant="h4" component="div">
-                              {site.name}
-                            </Typography>
-                            <Typography gutterBottom variant="h5" component="div">
-                            {site.description}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                              
-                            </Typography>
-                             </CardContent>
-                            </CardActionArea>
-                        </Card>  }
-
-          )
-        }
+      <ul  sx={styles.wrapper.box}>              
+             
+       <Card sx={styles.wrapper.box.card} >
+          <CardActionArea sx={styles.wrapper.box.card.actionArea} to='https://nortongymv1.netlify.app/'>
+         
+            <StaticImage sx={styles.wrapper.box.card.actionArea.img} src='../images/smallA.jpeg'   alt="site display image" placeholder="tracedSvg" 
+            />
+          <CardContent>
+            <Typography gutterBottom variant="h4" component="div">
+              Blog Site sample
+            </Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              The first iteration of this site using react and mui 
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              
+            </Typography>
+           </CardContent>
+          </CardActionArea>
+          </Card>
+        <Card sx={styles.wrapper.box.card} >
+          <CardActionArea sx={styles.wrapper.box.card.actionArea} to='https://professorcodegeekblogsitesample1.netlify.app/'>
+             <StaticImage sx={styles.wrapper.box.card.actionArea.img} src='../images/smallH.jpg'  alt="site display image" placeholder="tracedSvg" 
+            />
+          <CardContent>
+            <Typography gutterBottom variant="h4" component="div">
+             Norton Gym
+            </Typography>
+            <Typography gutterBottom variant="h5" component="div">
+            A fully Responsive gym landing page design for a hypothetical Gym in my home town.
+            </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>     
        </ul>
-      </div>
-     
+     </div>    
       
     </Layout>
   )

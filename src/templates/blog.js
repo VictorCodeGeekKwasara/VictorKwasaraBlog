@@ -3,7 +3,7 @@ import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import { useWidth } from '../hooks/useWidth';
 import {Typography} from '@mui/material';
-import { style } from '@mui/system';
+
 
 export default function Blog({data}) {
 
@@ -16,7 +16,7 @@ export default function Blog({data}) {
      top:'0px',
      left:'0px',
      width:'98.5vw',
-     height:'200vh', //bug needs fixing
+     height: mobile?'300vh': '210vh', //bug needs fixing
      backgroundColor: mobile? '#1F0318' : '#ffff' ,
      mixBlendMode:'multiply',
      zIndex:'-1'
@@ -24,9 +24,8 @@ export default function Blog({data}) {
    wrapper:{
 
     margin:"10vh auto 0 auto",   
-    height:'190vh',
+    height:mobile? '290vh':'210vh',
     width:mobile? '80vw':'900px',
-    overflowY:'scroll',
     textAlign:'center',
    display:'flex',
    flexDirection:'column',

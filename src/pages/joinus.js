@@ -122,7 +122,7 @@ const styles = {
 				onChange={(e) => setName(e.target.value)}
         style={styles.formwrapper.frm.inpt}
          />
-        {nameError!='' && <div style={styles.err}>{nameError}</div>}
+        {nameError!=='' && <div style={styles.err}>{nameError}</div>}
         <input
         type="email"
         placeholder='example@xxxxxx.com'
@@ -132,7 +132,7 @@ const styles = {
 				onChange={(e) => setEmail(e.target.value)}
         style={styles.formwrapper.frm.inpt}
          />
-       {emailError!='' && <div style={styles.err}>{emailError}</div>}
+       {emailError!=='' && <div style={styles.err}>{emailError}</div>}
         <input
         type="password"
         placeholder='password'
@@ -142,7 +142,7 @@ const styles = {
 				onChange={(e) => setPassword(e.target.value)}
         style={styles.formwrapper.frm.inpt}
         />
-        {passError!='' && <div style={styles.err}>{passError}</div>}
+        {passError!=='' && <div style={styles.err}>{passError}</div>}
 
 
         <Button type="submit" variant='contained' sx={styles.formwrapper.frm.btn}>Submit</Button>

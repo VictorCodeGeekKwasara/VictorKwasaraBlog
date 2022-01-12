@@ -6,17 +6,7 @@ import MobileNav from './mobile/MobileNav'
 import { useWidth } from '../hooks/useWidth'
 
 
-const styles= {
 
-  wrapper:{
-
-    
-    // display:'flex',
-    // flexDirection:'column',
-    // minHeight:'100vh',
-    // overflowX:'hidden',
-  }
-}
 
 export default function Layout({children}) {
 
