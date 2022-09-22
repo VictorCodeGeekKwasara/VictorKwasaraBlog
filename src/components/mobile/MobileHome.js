@@ -5,19 +5,7 @@ import {Typography} from '@mui/material';
 import{ Button} from "gatsby-theme-material-ui"
 
 export default function MobileHome() {  
-	const [tall,setTall] = useState(true);
 
-useEffect(() => {
-		const handleview = () => {
-		  window.innerHeight > 700 ? setTall(true): setTall(false)
-		};
-
-		handleview();
-		window.addEventListener('resize', handleview);
-	}, []);
-
-
-  let image = tall ? bgtall: bgsmall 
 
 const styles = {
 

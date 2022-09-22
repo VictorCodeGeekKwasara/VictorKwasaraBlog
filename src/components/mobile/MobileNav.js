@@ -55,48 +55,63 @@ const styles={
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
 
-  
+  const handleNavToggle = ()=> {
+          setOpen(!open);
+
+  }
 
   return (
-    <div>
-     
-     
-     { open ?<div style={styles.appdv}> 
-         <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={()=>setOpen(false)}
-          ><CloseRoundedIcon />
-          </IconButton></div>  :  
-          <AppBar sx={styles.appb} elevation={0} >
-            <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={()=>setOpen(true)}
-          ><MenuRoundedIcon sx={{color:'white'}} />
-          </IconButton>
-          </AppBar>}
-   
-    
-    { open && (
-     <div style={styles.linkdv}>  
-      
-      <Link style={styles.linkdv.lnks} to="/">Home</Link>
-      <Link style={styles.linkdv.lnks} to="/portfolio">Portfolio</Link>
-      <Link style={styles.linkdv.lnks}  to="/blog">Blogs</Link>  
-      <Link style={styles.linkdv.lnks}  to="/about">About</Link>   
-      <Link style={styles.linkdv.lnks} to="/login">Login</Link>
-      <Link style={styles.linkdv.lnks} to="/joinus">Joinus</Link>    
-    </div>    
-      )} 
-      
-    </div>
-   
-  )
+		<div>
+			{open ? (
+				<div style={styles.appdv}>
+					<IconButton
+						size='large'
+						edge='start'
+						color='inherit'
+						aria-label='menu'
+						sx={{ mr: 2 }}
+						onClick={handleNavToggle}
+					>
+						<CloseRoundedIcon />
+					</IconButton>
+				</div>
+			) : (
+				<AppBar sx={styles.appb} elevation={0}>
+					<IconButton
+						size='large'
+						edge='start'
+						color='inherit'
+						aria-label='menu'
+						sx={{ mr: 2 }}
+						onClick={handleNavToggle}
+					>
+						<MenuRoundedIcon sx={{ color: 'white' }} />
+					</IconButton>
+				</AppBar>
+			)}
+
+			{open && (
+				<div style={styles.linkdv}>
+					<Link style={styles.linkdv.lnks} to='/'>
+						Home
+					</Link>
+					<Link style={styles.linkdv.lnks} to='/portfolio'>
+						Portfolio
+					</Link>
+					<Link style={styles.linkdv.lnks} to='/blog'>
+						Blogs
+					</Link>
+					<Link style={styles.linkdv.lnks} to='/about'>
+						About
+					</Link>
+					<Link style={styles.linkdv.lnks} to='/login'>
+						Login
+					</Link>
+					<Link style={styles.linkdv.lnks} to='/joinus'>
+						Joinus
+					</Link>
+				</div>
+			)}
+		</div>
+	);
 }

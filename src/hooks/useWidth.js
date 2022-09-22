@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 export const useWidth = initialValue => {
 const [mobile, setMobile] = useState(initialValue);
 
@@ -10,7 +9,7 @@ useEffect(() => {
 		};
 
 		handleview();
-		window.addEventListener('resize', handleview);
+		// window.addEventListener('resize', handleview);
 	}, []);
 
   return mobile

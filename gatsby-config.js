@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "victorkwasara",
+    description:"A blog site and portfolio",
+    author:"Victor Kwasara"
   },
   plugins: [ 
     

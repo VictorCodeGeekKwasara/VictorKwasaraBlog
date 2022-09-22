@@ -50,46 +50,56 @@ const styles = {
 }
   
   return (
-    <Layout>
-      <div style={styles.bg}></div>
-      <div  style={styles.wrapper}>       
-      <ul  sx={styles.wrapper.box}>              
-             
-       <Card sx={styles.wrapper.box.card} >
-          <CardActionArea sx={styles.wrapper.box.card.actionArea} to='https://nortongymv1.netlify.app/'>
-         
-            <StaticImage sx={styles.wrapper.box.card.actionArea.img} src='../images/smallA.jpeg'   alt="site display image" placeholder="tracedSvg" 
-            />
-          <CardContent>
-            <Typography gutterBottom variant="h4" component="div">
-              Blog Site sample
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-              The first iteration of this site using react and mui 
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              
-            </Typography>
-           </CardContent>
-          </CardActionArea>
-          </Card>
-        <Card sx={styles.wrapper.box.card} >
-          <CardActionArea sx={styles.wrapper.box.card.actionArea} to='https://professorcodegeekblogsitesample1.netlify.app/'>
-             <StaticImage sx={styles.wrapper.box.card.actionArea.img} src='../images/smallH.jpg'  alt="site display image" placeholder="tracedSvg" 
-            />
-          <CardContent>
-            <Typography gutterBottom variant="h4" component="div">
-             Norton Gym
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            A fully Responsive gym landing page design for a hypothetical Gym in my home town.
-            </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>     
-       </ul>
-     </div>    
-      
-    </Layout>
-  )
+		<Layout>
+			<div style={styles.bg}></div>
+			<div style={styles.wrapper}>
+				<ul sx={styles.wrapper.box}>
+					<Card sx={styles.wrapper.box.card}>
+						<CardActionArea
+							sx={styles.wrapper.box.card.actionArea}
+							to='https://professorcodegeekblogsitesample1.netlify.app/'
+						>
+							<StaticImage
+								sx={styles.wrapper.box.card.actionArea.img}
+								src='../images/smallA.jpeg'
+								alt='site display image'
+								placeholder='tracedSvg'
+							/>
+							<CardContent>
+								<Typography gutterBottom variant='h4' component='div'>
+									Blog Site sample
+								</Typography>
+								<Typography gutterBottom variant='h5' component='div'>
+									The first iteration of this site using react and mui
+								</Typography>
+								<Typography variant='body2' color='text.secondary'></Typography>
+							</CardContent>
+						</CardActionArea>
+					</Card>
+					<Card sx={styles.wrapper.box.card}>
+						<CardActionArea
+							sx={styles.wrapper.box.card.actionArea}
+							to='https://nortongymv1.netlify.app/'
+						>
+							<StaticImage
+								sx={styles.wrapper.box.card.actionArea.img}
+								src='../images/smallH.jpg'
+								alt='site display image'
+								placeholder='tracedSvg'
+							/>
+							<CardContent>
+								<Typography gutterBottom variant='h4' component='div'>
+									Norton Gym
+								</Typography>
+								<Typography gutterBottom variant='h5' component='div'>
+									A fully Responsive gym landing page design for a hypothetical
+									Gym in my home town.
+								</Typography>
+							</CardContent>
+						</CardActionArea>
+					</Card>
+				</ul>
+			</div>
+		</Layout>
+	);
 }

@@ -1,26 +1,32 @@
 import React from 'react'
-import Footer from './desktop/Footer'
-import Nav from './desktop/Nav'
-import MobileFooter from './mobile/MobileFooter'
-import MobileNav from './mobile/MobileNav'
+import {
+	createTheme,
+	ThemeProvider,
+	responsiveFontSizes,
+} from '@mui/material/styles';
+import Nav from './Nav'
+import Footer from './Footer'
 import { useWidth } from '../hooks/useWidth'
+import {layout} from "./layout.module.css"
 
-
-
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 export default function Layout({children}) {
+ 
 
-    let mobile = useWidth(true)
+  let mobile = useWidth(true);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+     <div class={layout}>
+      <Nav/>
 
-    {mobile ? <MobileNav/>:<Nav/>}
-    
-    {children}
-    
-    {mobile? <MobileFooter/>:<Footer/>}
-      
-    </>
-  )
+			{children}
+
+      <Footer/>
+		</div> 
+    </ThemeProvider>
+		
+	);
 }
