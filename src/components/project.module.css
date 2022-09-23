@@ -1,0 +1,42 @@
+.image {
+  width: 30% ;
+  height: 250px ;  
+  margin-left: 0px ;
+  object-fit: cover;
+}
+
+.content {
+  /* background-color: pink ; */
+  display: flex ;
+  flex-direction:column ;
+  align-items: center;
+  margin: auto 20px ;
+  width: 60% ;
+  height: 200px ;
+}
+
+@media screen  and (min-width: 900px) {
+.image {
+  width: 250px ;
+  height: 250px ;
+
+  /* position:absolute;
+  top: 0 ;
+  left: 0 ; */
+  
+  margin-left: 0px ;
+ 
+}
+
+.content {
+  /* background-color: pink ; */
+  display: flex ;
+  flex-direction:column ;
+  align-items: center;
+  margin: auto 20px ;
+  width: 450px ;
+  height: 200px ;
+}
+
+}
+

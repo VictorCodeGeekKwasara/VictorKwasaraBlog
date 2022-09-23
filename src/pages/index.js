@@ -14,6 +14,7 @@ const styles = {
 			backgroundColor: '#47BDBE',
 		},
 		color: 'black',
+		zIndex: 1,
 	},
 	btn2: {
 		marginLeft: '2.5vw',
@@ -23,6 +24,7 @@ const styles = {
 			backgroundColor: 'white',
 		},
 		color: 'black',
+		
 	},
 };
 

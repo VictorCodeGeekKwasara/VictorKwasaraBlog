@@ -22,15 +22,13 @@ export default function Blog({data}) {
      zIndex:'-1'
   },
    wrapper:{
-
-    margin:"10vh auto 0 auto",   
-    height:mobile? '290vh':'210vh',
-    width:mobile? '80vw':'900px',
-    textAlign:'center',
+   margin:"10vh auto 0 auto",   
+   width:mobile? '80vw':'900px',
+   textAlign:'center',
    display:'flex',
    flexDirection:'column',
    alignitems:'center',
-   color: mobile? '#fff':'#505050',
+  //  color: mobile? '#fff':'#505050',
    overflowY:'hidden',
     
     // card:{
@@ -54,7 +52,7 @@ export default function Blog({data}) {
 }
   return (
     <Layout>      
-      <div style={styles.bg}></div>
+      {/* <div style={styles.bg}></div> */}
       <div style={styles.wrapper}>
         <div>
         <Typography variant={mobile?'h6':'h2'}>{data.markdownRemark.frontmatter.title}</Typography>

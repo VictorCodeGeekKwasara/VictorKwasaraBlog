@@ -11,7 +11,7 @@
     left: 0px;
     width:100vw;
     height:100vh;
-    z-index: 1;
+    z-index: 999;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -36,9 +36,12 @@
 }
 .openClose {
     position: fixed ;
-    top: max(2.5vh,10px) ;
-    right: min(10vw,100px);
-    z-index: 99 ;
+    top: min(3.5vh,30px) ;
+    right: min(9vw,90px);
+    z-index: 999 ;
+    background-color: #1F0318;
+    border-radius: 5% ;
+    padding: 0 ;
 }
 
 @media screen and (min-width: 900px){
@@ -69,8 +72,9 @@
   }
 
   .link {
-  /* // textDecoration:'none' */
     z-index: 999;
+    font-size:5vh;
+    text-decoration:none;
     color:#1F0318;
     cursor: pointer;
 

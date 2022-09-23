@@ -1,0 +1,18 @@
+.wrapper{
+    width: min(1400px,100vw);
+    height: auto ;
+    display: flex ;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    /* background-color: black; */
+    margin-top: min(12vh,80px);
+    /* height:190vh; */
+    /* overflow-y:hidden; */
+
+}
+
+.article {
+    margin: 15px auto 15px auto ;
+    
+}
