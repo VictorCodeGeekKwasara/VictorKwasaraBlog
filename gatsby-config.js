@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
+        name: "images1",
         path: `${__dirname}/src/images/`,
       },
       __key: "images",
@@ -43,11 +43,18 @@ module.exports = {
       },
       
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images3",
+        path: `${__dirname}/src/images`,
+      },
+      
+    },
     
     "gatsby-transformer-sharp",
      "gatsby-plugin-sharp",
       "gatsby-plugin-image",
-
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -58,7 +65,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-netlify-cms",
-   
    
   ],
 };

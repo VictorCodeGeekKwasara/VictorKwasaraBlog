@@ -68,4 +68,6 @@ export default function Index() {
 	);
 }
 
+export const Head = <link rel='icon' href='favicon.ico' />;
+
 

@@ -10,16 +10,31 @@ const data = [
 		title: 'Blog Site sample',
 		link: 'https://professorcodegeekblogsitesample1.netlify.app/',
 		img: './images/smallA.jpeg',
-		id: "1a",
+		id: '1a',
 		description: 'The first iteration of this site using react and mui',
 	},
 	{
 		title: 'Norton Gym',
 		link: 'https://nortongymv1.netlify.app/',
 		img: './images/smallH.jpg',
-		id:"2a",
+		id: '2a',
 		description:
 			'A fully Responsive gym landing page design for a hypothetical Gym in my home town.',
+	},
+	{
+		title: 'Book lover site',
+		link: 'https://basicbooksitemain.gatsbyjs.io/',
+		img: './images/booksmini.jpg',
+		id: '2a',
+		description: 'A site about books and summaries, complete with resposivity',
+	},
+	{
+		title: 'Simple solana calculator',
+		link: 'https://basic-solana-calculator.herokuapp.com/',
+		img: './images/calculatormini.jpg',
+		id: '2a',
+		description:
+			'A full stack calculator app on the blockchain. Using React, material ui on the frontend and solana, anchor backend',
 	},
 ];
 
