@@ -79,14 +79,14 @@ export default function Blogs({ data, pageContext }) {
 
 				<div class={linkDiv}>
 					{pageContext.currentPage > 1 && (
-						<Link to={previousPage} class={link}>
+						<Link to={previousPage} class={link}>							
 							{'Go to previous page'}
 						</Link>
 					)}
 
 					{pageContext.currentPage < pageContext.pageCount && (
 						<Link to={nextPage} class={link}>
-							{'Go to next page'}
+							 Go to next page
 						</Link>
 					)}
 				</div>

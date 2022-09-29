@@ -1,5 +1,5 @@
- .link, a.link  {
-
+ 
+ .link , .link-div a {
  text-decoration: none;
  color: #07393C ;
  font-size: 25px;
@@ -9,6 +9,7 @@
 .link:hover {
   color: #58F8FA ;
 }
+
 .link-div {
   display: flex ;
   flex-direction: row;

@@ -5,23 +5,7 @@ import { useWidth } from '../hooks/useWidth';
 
 import {wrapper,article} from "./portfolio.module.css"
 
-const data = [
-	{
-		title: 'Blog Site sample',
-		link: 'https://professorcodegeekblogsitesample1.netlify.app/',
-		img: './images/smallA.jpeg',
-		id: '1a',
-		description: 'The first iteration of this site using react and mui',
-	},
-	{
-		title: 'Norton Gym',
-		link: 'https://nortongymv1.netlify.app/',
-		img: './images/smallH.jpg',
-		id: '2a',
-		description:
-			'A fully Responsive gym landing page design for a hypothetical Gym in my home town.',
-	},
-	{
+const data = [{
 		title: 'Book lover site',
 		link: 'https://basicbooksitemain.gatsbyjs.io/',
 		img: './images/booksmini.jpg',
@@ -36,6 +20,21 @@ const data = [
 		description:
 			'A full stack calculator app on the blockchain. Using React, material ui on the frontend and solana, anchor backend',
 	},
+	{
+		title: 'Blog Site sample',
+		link: 'https://professorcodegeekblogsitesample1.netlify.app/',
+		img: './images/smallA.jpeg',
+		id: '1a',
+		description: 'The first iteration of this site using react and mui',
+	},
+	{
+		title: 'Norton Gym',
+		link: 'https://nortongymv1.netlify.app/',
+		img: './images/smallH.jpg',
+		id: '2a',
+		description:
+			'A fully Responsive gym landing page design for a hypothetical Gym in my home town.',
+	},	
 ];
 
 export default function Portfolio() {

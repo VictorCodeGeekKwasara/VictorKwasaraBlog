@@ -5,8 +5,6 @@ import { Button } from 'gatsby-theme-material-ui';
 import { Typography } from '@mui/material';
 import { useWidth } from '../hooks/useWidth';
 
-
-
 export default function Login() {
  	
 	const [passError, setPassError] = useState('');
@@ -25,7 +23,7 @@ const styles = {
      position:'absolute',
      top:'0px',
      left:'0px',
-     width:mobile? '100vw': '98.5vw',
+     width:"100vw",
      height:'100vh',
      backgroundImage:`linear-gradient(to right, #1F0318,#58F8FA,#1F0318)`,
      zIndex:'-1'
@@ -38,7 +36,9 @@ const styles = {
     alignItems:'center',
     justifyContent:'center',
     // backgroundColor:'red',
-    height:"100vh",
+    height:"90vh",
+    width: "100%",
+    
     // zindex:'2'
      txt:{
       color:'#1F0318',
