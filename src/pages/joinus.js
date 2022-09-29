@@ -3,7 +3,8 @@ import Layout from '../components/Layout';
 import axios  from 'axios'
 import { Button } from 'gatsby-theme-material-ui';
 import { Typography } from '@mui/material';
-import { useWidth } from '../hooks/useWidth';
+import Seo from "../components/seo";
+
 
 
 
@@ -14,7 +15,7 @@ export default function Login() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-  let mobile = useWidth(true) ; 
+ 
 
 const styles = {
 
@@ -150,3 +151,4 @@ const styles = {
     </Layout>
   )
 }
+export const Head = () => <Seo title='Join' />;

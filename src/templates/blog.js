@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import { useWidth } from '../hooks/useWidth';
 import {Typography} from '@mui/material';
+import Seo from "../components/seo"
 
 
 export default function Blog({data}) {
@@ -72,3 +73,5 @@ query($slug: String!){
     }
   }
 }`
+
+export const Head = () => <Seo title='Blog' />;

@@ -1,10 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
 import { Typography } from '@mui/material';
 import { Button } from 'gatsby-theme-material-ui';
-import {wrapper, txt, background} from "./index.module.css"
-
-import { useWidth } from '../hooks/useWidth';
+import {wrapper, txt, background} from "./index.module.css";
+import Seo from '../components/seo.js';
 
 const styles = {
 	btn1: {
@@ -31,10 +30,6 @@ const styles = {
 
 export default function Index() {
 
-  const [small,isSmall] = useState(true);
-
-
-  let mobile = useWidth(true) ;
 
 	return (
 		<Layout>
@@ -68,6 +63,6 @@ export default function Index() {
 	);
 }
 
-export const Head = <link rel='icon' href='favicon.ico' />;
+export const Head = () => <Seo title='Home' />;
 
 

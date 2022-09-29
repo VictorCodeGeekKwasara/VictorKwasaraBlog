@@ -6,7 +6,8 @@ import { CardActionArea, Link } from 'gatsby-theme-material-ui';
 import { Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { useWidth } from '../hooks/useWidth';
+// import { useWidth } from '../hooks/useWidth';
+import Seo from "../components/seo";
 
 import {link, linkDiv} from './blogs.module.css';
 
@@ -18,7 +19,7 @@ export default function Blogs({ data, pageContext }) {
 	const nextPage = `/blog/${pageContext.currentPage + 1}`;
 	const blogs = data.allMarkdownRemark.edges;
 
-	let mobile = useWidth(true); //hook used to toggle screen components based on width
+	// let mobile = useWidth(true); //hook used to toggle screen components based on width
 
 	const styles = {
 		wrapper: {
@@ -124,3 +125,5 @@ export const query = graphql`
 		}
 	}
 `;
+
+export const Head = () => <Seo title='Blogs' />;

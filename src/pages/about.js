@@ -1,57 +1,20 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Typography } from '@mui/material';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { IconButton, Link } from 'gatsby-theme-material-ui';
-import balance from '../images/balance.svg';
-import { useWidth } from '../hooks/useWidth';
-import {victor,container,website, heading, text, social} from "./about.module.css";
-
-const styles = {
-		img: {
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'flex-end',
-			position: 'absolute',
-			top: '10vh',
-			right: '0px',
-			height: '80vh',
-			width: '55vw',
-
-			// backgroundColor:'red'
-					
-
-		website: {
-			position: 'absolute',
-			top: '110vh',
-			right: '10px',
-			height: '80vh',
-			width: '55vw',
-			// backgroundColor:'brown',
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'center',
-			justifyContent: 'center',
-		},
-
-		balance: {
-			position: 'absolute',
-			top: '120vh',
-			left: '0px',
-			height: '85vh',
-			width: '35vw',
-			backgroundImage: `url(${balance})`,
-		},
-	},
-};
+// import balance from '../images/balance.svg';
+// import { useWidth } from '../hooks/useWidth';
+import Seo from "../components/seo";
+import {victor,container,website, text, social} from "./about.module.css";
 
 export default function About() {
 	// custome hook used to toggle the screen design based on view width improvision
 	// should use beter styling solutions
-	let mobile = useWidth(false);
+	// let mobile = useWidth(false);
 
 	return (
 		<Layout>
@@ -96,7 +59,7 @@ export default function About() {
 					<Typography class={text} variant='body'>
 						Victor is a Engineer and Programing language enthusiast. He learnt
 						programming principles using java, back when he was in college
-						studying Mining Engineering. Ever since Victor has learnt About the
+						studying Engineering. Ever since Victor has learnt About the
 						internet Using Javascript, html and CSS. He has also learnt, rust
 						which is currently his favourite language and some python. In the
 						future Victor sees himself working with, blockchain technology,
@@ -127,15 +90,4 @@ export default function About() {
 
 
 
-
-
-
-		{/* <div style={styles.container.balance}></div>  */}
-
-{/* {/* <div style={styles.container.bg}></div>  
-					<div style={styles.container.img}>
-						<StaticImage
-							placeholder='tracedSVG'
-							src='../images/victor.png'
-							alt='victor pic'
-						/> */}
+export const Head = () => <Seo title='About' />;

@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/Layout';
 import Project from "../components/project"
-import { useWidth } from '../hooks/useWidth';
+import Seo from "../components/seo"
+// import { useWidth } from '../hooks/useWidth';
 
 import {wrapper,article} from "./portfolio.module.css"
 
@@ -56,6 +57,8 @@ export default function Portfolio() {
 		</Layout>
 	);
 }
+
+export const Head = () => <Seo title='Portfolio' />;
 
 
 
