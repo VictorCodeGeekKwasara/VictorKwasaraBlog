@@ -24,23 +24,23 @@ export default function Nav() {
   return (
 		<div class={wrapper}>
 			<div class={links} ref={linksRef}>
-				<Link to='/'>
-					<span class={link}>Home</span>					
+				<Link class={link}  to='/'>
+					<span class={link}>Home</span>
 				</Link>
 				<Link class={link} to='/portfolio'>
-					<span class={link}>Portfolio</span>					
+					<span class={link}>Portfolio</span>
 				</Link>
 				<Link class={link} to='/blog'>
-					<span class={link}>Blogs</span>					
+					<span class={link}>Blogs</span>
 				</Link>
 				<Link class={link} to='/about'>
-					<span class={link}>About</span>					
+					<span class={link}>About</span>
 				</Link>
 				<Link class={link} to='/login'>
-					<span class={link}>	Login</span>				
+					<span class={link}> Login</span>
 				</Link>
 				<Link class={link} to='/joinus'>
-					<span class={link}>Joinus</span>					
+					<span class={link}>Joinus</span>
 				</Link>
 			</div>
 			<div class={openClose}>

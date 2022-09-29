@@ -26,7 +26,7 @@
   opacity: 1 ;
 }
 
-.link{
+.link, .links a{
     height: 15vh;
     width: 100vw;
     font-size:5vh;
@@ -71,7 +71,7 @@
     z-index: 999;  
   }
 
-  .link {
+  .link, .links a {
     z-index: 999;
     font-size:5vh;
     text-decoration:none;
