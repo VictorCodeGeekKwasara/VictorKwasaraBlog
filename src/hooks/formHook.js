@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 export const useWidth = initialValue => {
 const [mobile, setMobile] = useState(initialValue);
 

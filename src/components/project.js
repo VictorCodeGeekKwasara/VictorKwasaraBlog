@@ -38,10 +38,8 @@ const Project = ({title,link,description,img}) => {
   return (
 		<>
 			<Card sx={styles.card}>
-				<CardActionArea
-					sx={styles.actionArea}
-					to={link}
-				>
+				<a>
+					<CardActionArea sx={styles.actionArea} to={link} target='_blank'>
 					<img
 						src={img}
 						alt='site display image'
@@ -52,9 +50,14 @@ const Project = ({title,link,description,img}) => {
 						<Typography gutterBottom variant='h4' component='div'>
 							{title}
 						</Typography>
-						<Typography variant='body2' color='text.secondary'>	{description}</Typography>
+						<Typography variant='body2' color='text.secondary'>
+							{' '}
+							{description}
+						</Typography>
 					</CardContent>
 				</CardActionArea>
+				</a>
+				
 			</Card>
 		</>
 	);

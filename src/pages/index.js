@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { Typography } from '@mui/material';
+import {Typography} from '@mui/material';
 import { Button } from 'gatsby-theme-material-ui';
-import {wrapper, txt, background} from "./index.module.css";
+import {wrapper, txt, background, fontsize} from "./index.module.css";
 import Seo from '../components/seo.js';
 
 const styles = {
@@ -33,10 +33,10 @@ export default function Index() {
 
 	return (
 		<Layout>
-			<div class={wrapper}>
-				<div class={background}></div>
-				<div class={txt}>
-					<Typography variant='h1'>
+			<div className={wrapper}>
+				<div className={background}></div>
+				<div className={txt}>
+					<Typography variant='h1' c>
 						Welcome to Victor’s Blog and Potfolio site
 					</Typography>
 
